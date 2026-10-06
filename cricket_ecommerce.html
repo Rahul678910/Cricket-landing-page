@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRICKET ATELIER | Tournament Grade Match Equipment & 3-Color Ball Reserve</title>
+  
+  <!-- Allowlisted Tailwind CSS -->
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  
+  <!-- Bundled 8K Base64 Images -->
+  <script src="images_data.js"></script>
+
+  <style>
+    /* ========================================================================= */
+    /* CRICKET BRAND DESIGN SYSTEM TOKENS                                        */
+    /* Deep Navy: #010736 | Midnight Blue: #0D1C42 | Royal Blue: #22396F         */
+    /* Warm Cream: #FCF1D0 | White: #FFFFFF                                      */
+    /* ========================================================================= */
+    :root {
+      --color-navy: #010736;
+      --color-midnight: #0D1C42;
+      --color-royal: #22396F;
+      --color-cream: #FCF1D0;
+      --color-cream-light: #FFF9EE;
+      --color-white: #FFFFFF;
+      --color-red-ball: #8B1818;
+      --color-white-ball: #F4F4F6;
+      --color-pink-ball: #D9486A;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: var(--color-cream);
+      color: var(--color-navy);
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    /* Custom Luxury Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--color-navy);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(252, 241, 208, 0.35);
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(252, 241, 208, 0.6);
+    }
+
+    /* Editorial Headline Typography */
+    .heading-glow,
+    .heading-dark {
+      display: inline-block;
+      background: linear-gradient(180deg, #FFFFFF 0%, #FCF1D0 50%, rgba(252, 241, 208, 0.82) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 40px rgba(252, 241, 208, 0.18);
+      letter-spacing: -0.04em;
+    }
+
+    .heading-light {
+      color: var(--color-navy);
+      letter-spacing: -0.03em;
+    }
+
+    /* Glassmorphism Styles */
+    .glass-navy-nav {
+      background: rgba(1, 7, 54, 0.92);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border-bottom: 1px solid rgba(252, 241, 208, 0.12);
+    }
+
+    .glass-dark-card {
+      background: rgba(13, 28, 66, 0.55);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(252, 241, 208, 0.14);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .product-white-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(1, 7, 54, 0.08);
+      box-shadow: 0 10px 30px rgba(1, 7, 54, 0.04);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .product-white-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 50px rgba(1, 7, 54, 0.12);
+      border-color: rgba(34, 57, 111, 0.3);
+    }
+
+    .btn-royal {
+      background: linear-gradient(135deg, #22396F 0%, #0D1C42 100%);
+      border: 1px solid rgba(252, 241, 208, 0.3);
+      color: #FCF1D0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-royal:hover {
+      background: linear-gradient(135deg, #FCF1D0 0%, #FFFFFF 100%);
+      color: #010736 !important;
+      border-color: #FCF1D0;
+      box-shadow: 0 0 25px rgba(252, 241, 208, 0.4);
+      transform: translateY(-1px);
+    }
+
+    .btn-navy {
+      background: #010736;
+      color: #FFFFFF;
+      transition: all 0.3s ease;
+    }
+    .btn-navy:hover {
+      background: #22396F;
+      color: #FCF1D0;
+      box-shadow: 0 10px 25px rgba(1, 7, 54, 0.25);
+    }
+
+    /* Ambient Hero Glow */
+    .ambient-hero-glow {
+      position: absolute;
+      width: 1000px;
+      height: 1000px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(34, 57, 111, 0.35) 0%, rgba(13, 28, 66, 0.15) 50%, transparent 75%);
+      filter: blur(80px);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    /* 3-Color Swatch Pill */
+    .swatch-btn {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .swatch-btn.active {
+      transform: scale(1.2);
+      border-color: #010736;
+      box-shadow: 0 0 8px rgba(1, 7, 54, 0.3);
+    }
+    .swatch-btn-dark.active {
+      border-color: #FCF1D0;
+      box-shadow: 0 0 10px rgba(252, 241, 208, 0.5);
+    }
+  </style>
+</head>
+<body class="relative">
+
+  <!-- ========================================================================= -->
+  <!-- AMBIENT ROTATING WILLOW BAT BACKGROUND LAYER                              -->
+  <!-- ========================================================================= -->
+  <div id="ambient-bat-bg" class="fixed inset-0 pointer-events-none z-0 overflow-hidden transition-opacity duration-700 opacity-20">
+    <div class="absolute inset-0 bg-[#010736]/75 backdrop-blur-[1px] z-10"></div>
+    <div class="absolute inset-0 flex items-center justify-center">
+      <img id="bg-loop-img" src="bg_bat_loop.webp" alt="Rotating Willow Bat" 
+           class="w-[140%] max-w-none h-[140%] object-cover object-center filter contrast-125 saturate-50 mix-blend-screen scale-110">
+    </div>
+    <div class="absolute inset-0 z-20" style="background: radial-gradient(circle at 50% 45%, rgba(1,7,54,0.3) 0%, rgba(1,7,54,0.85) 60%, #010736 95%);"></div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 1. TOP ANNOUNCEMENT BAR (DARK: #010736)                                    -->
+  <!-- ========================================================================= -->
+  <div class="w-full bg-[#010736] text-[#FCF1D0] border-b border-[#FCF1D0]/10 py-2 px-4 text-center text-[11px] font-mono tracking-widest flex items-center justify-between z-50 relative">
+    <div class="hidden md:flex items-center gap-4">
+      <span class="flex items-center gap-1.5 text-emerald-400">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        MCC LAW 4 APPROVED
+      </span>
+      <span class="text-[#FCF1D0]/30">•</span>
+      <span class="text-[#FCF1D0]/90">3 MATCH BALL COLORWAYS: RED • WHITE • PINK</span>
+    </div>
+
+    <div class="mx-auto md:mx-0 flex items-center gap-2">
+      <span class="text-[#FCF1D0]/80">PRIORITY WORLDWIDE EXPRESS COURIER</span>
+      <span class="text-[10px] px-2 py-0.5 rounded bg-[#22396F]/50 border border-[#FCF1D0]/20 text-[#FCF1D0]">COMPLIMENTARY OVER $200</span>
+    </div>
+
+    <div class="hidden md:flex items-center gap-4">
+      <!-- Background Motion Controller -->
+      <button onclick="cycleBgMotion()" class="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#22396F]/40 border border-[#FCF1D0]/20 hover:border-[#FCF1D0]/60 text-[10px] font-mono text-[#FCF1D0]/90 transition-colors cursor-pointer">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+        <span id="bg-motion-text">Willow BG: 20%</span>
+      </button>
+
+      <span class="text-[#FCF1D0]/30">•</span>
+
+      <!-- Currency Switcher -->
+      <select id="curr-select" onchange="changeCurrency(this.value)" class="bg-transparent text-[11px] text-[#FCF1D0]/90 font-mono focus:outline-none cursor-pointer">
+        <option value="USD" class="bg-[#010736] text-[#FCF1D0]">USD ($)</option>
+        <option value="GBP" class="bg-[#010736] text-[#FCF1D0]">GBP (£)</option>
+        <option value="INR" class="bg-[#010736] text-[#FCF1D0]">INR (₹)</option>
+        <option value="AUD" class="bg-[#010736] text-[#FCF1D0]">AUD (A$)</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 2. GLASSMORPHIC MAIN NAVIGATION BAR (DARK: #010736)                        -->
+  <!-- ========================================================================= -->
+  <header class="sticky top-0 w-full z-40 glass-navy-nav py-3.5 px-6 md:px-12 transition-all">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group cursor-pointer">
+        <div class="w-8 h-8 rounded-full border border-[#FCF1D0]/30 flex items-center justify-center bg-[#0D1C42] group-hover:border-[#FCF1D0] transition-colors shadow-lg">
+          <div class="w-2.5 h-2.5 rounded-full bg-[#FCF1D0]"></div>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-sm font-bold tracking-wider text-[#FCF1D0] group-hover:text-white transition-colors">CRICKET ATELIER</span>
+          <span class="text-[9px] tracking-[0.25em] uppercase text-[#FCF1D0]/50 -mt-0.5">3-Color Match Reserve</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-8 text-[13px] font-medium tracking-wide">
+        <button onclick="filterDiscipline('All')" class="text-[#FCF1D0]/70 hover:text-[#FCF1D0] transition-colors cursor-pointer">All Cricket</button>
+        <button onclick="filterDiscipline('Match Balls')" class="text-[#FCF1D0]/70 hover:text-[#FCF1D0] transition-colors cursor-pointer flex items-center gap-1.5">
+          <span>Match Balls</span>
+          <span class="flex items-center gap-1">
+            <span class="w-2 h-2 rounded-full bg-[#8B1818]"></span>
+            <span class="w-2 h-2 rounded-full bg-white"></span>
+            <span class="w-2 h-2 rounded-full bg-[#D9486A]"></span>
+          </span>
+        </button>
+        <button onclick="filterDiscipline('Willow Bats')" class="text-[#FCF1D0]/70 hover:text-[#FCF1D0] transition-colors cursor-pointer">Willow Bats</button>
+        <button onclick="filterDiscipline('Apparel')" class="text-[#FCF1D0]/70 hover:text-[#FCF1D0] transition-colors cursor-pointer">Team Kits</button>
+        <a href="#specs-section" class="text-[#FCF1D0]/70 hover:text-[#FCF1D0] transition-colors cursor-pointer flex items-center gap-1">
+          <span>Technical Specs</span>
+          <span class="text-[9px] px-1.5 py-0.5 rounded bg-[#22396F] text-[#FCF1D0]">LAW 4</span>
+        </a>
+        <a href="#wholesale-section" class="text-[#FCF1D0]/70 hover:text-[#FCF1D0] transition-colors cursor-pointer">Club Wholesale</a>
+        <a href="cricket_experience.html" class="text-[#FCF1D0] font-semibold flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0D1C42] border border-[#FCF1D0]/25 hover:border-[#FCF1D0] transition-all">
+          <span>3D Scrolly Reel</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        </a>
+      </nav>
+
+      <!-- Right Controls: Audio & Bag -->
+      <div class="flex items-center gap-4">
+        <!-- Audio Toggle -->
+        <button id="sound-btn" onclick="toggleAudio()" class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-[#0D1C42]/60 border border-[#FCF1D0]/20 hover:border-[#FCF1D0]/50 transition-colors cursor-pointer text-xs text-[#FCF1D0]/80">
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+          <span id="sound-txt" class="text-[10px] uppercase font-mono">Muted</span>
+        </button>
+
+        <!-- Cart Trigger -->
+        <button onclick="toggleCart()" class="btn-royal px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-2.5 cursor-pointer shadow-lg relative">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+          </svg>
+          <span>Bag</span>
+          <span id="cart-badge" class="w-5 h-5 rounded-full bg-[#FCF1D0] text-[#010736] font-bold text-[10px] flex items-center justify-center">0</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- 3. HERO SECTION [DARK: #010736] WITH 3-COLOR BALL SPOTLIGHT                -->
+  <!-- ========================================================================= -->
+  <section class="relative bg-[#010736] text-[#FCF1D0] min-h-[85vh] flex items-center justify-center px-6 md:px-12 py-16 overflow-hidden">
+    <div class="ambient-hero-glow top-1/2 left-1/2"></div>
+    <div class="ambient-hero-glow top-1/3 left-3/4 opacity-40"></div>
+
+    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+      
+      <!-- Hero Copy Column (7 cols) -->
+      <div class="lg:col-span-7 flex flex-col items-start">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0D1C42] border border-[#FCF1D0]/20 text-[11px] font-mono tracking-widest uppercase text-[#FCF1D0] mb-6 backdrop-blur-md">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+          EDGE PRO GEAR LIVE • 3-COLOR MATCH BALL RESERVE
+        </div>
+
+        <h1 class="heading-glow text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.05] mb-6">
+          Tournament Grade Match Kits & Equipment
+        </h1>
+
+        <p class="text-base sm:text-lg text-[#FCF1D0]/75 font-light leading-relaxed max-w-2xl mb-8">
+          Engineered exclusively for international competition and elite regional clubs. Featuring ICC conforming 4-piece leather match balls in all three regulation colors (Cherry Red, Tournament White, and Twilight Pink), unbleached Grade 1+ English willow clefts, and moisture-wicking matchwear.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap items-center gap-4 mb-10">
+          <a href="#inventory-section" class="btn-royal px-7 py-3.5 rounded-full text-xs font-semibold tracking-wider uppercase flex items-center gap-3 shadow-2xl cursor-pointer">
+            <span>Explore 3-Color Match Kits</span>
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </a>
+          <button onclick="openWholesaleModal()" class="px-6 py-3.5 rounded-full text-xs font-semibold tracking-wider uppercase text-[#FCF1D0]/90 hover:text-[#FCF1D0] border border-[#FCF1D0]/20 hover:border-[#FCF1D0]/50 bg-[#0D1C42]/50 backdrop-blur-md transition-all cursor-pointer">
+            Club Wholesale Portal
+          </button>
+        </div>
+
+        <!-- Trust Badges with 3-Color Dot Indicator -->
+        <div class="flex flex-wrap items-center gap-6 pt-6 border-t border-[#FCF1D0]/10 text-xs font-mono text-[#FCF1D0]/70">
+          <div class="flex items-center gap-2">
+            <span class="flex items-center gap-1">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#8B1818]" title="Red Test Ball"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-white" title="White ODI Ball"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[#D9486A]" title="Pink Floodlit Ball"></span>
+            </span>
+            <span>All 3 ICC Colors Available</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-[#FCF1D0]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            <span>MCC Law 4 Certified</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-[#FCF1D0]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span>7-Day Air Courier</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Hero Interactive 3-Ball Product Spotlight (5 cols) -->
+      <div class="lg:col-span-5 relative">
+        <div class="glass-dark-card rounded-3xl p-6 sm:p-8 relative overflow-hidden border border-[#FCF1D0]/20 shadow-2xl">
+          
+          <div class="flex items-center justify-between mb-4">
+            <span id="hero-spotlight-badge" class="text-[10px] tracking-[0.2em] uppercase font-bold text-emerald-400 bg-emerald-950/60 px-2.5 py-1 rounded border border-emerald-500/20">
+              OFFICIAL 3-COLOR TRIO
+            </span>
+            <span class="text-xs font-mono text-[#FCF1D0]/60">155.9g – 163g SPEC</span>
+          </div>
+
+          <!-- Featured Image Container -->
+          <div class="relative w-full aspect-square rounded-2xl overflow-hidden mb-6 bg-[#000414] flex items-center justify-center group border border-[#FCF1D0]/10">
+            <img id="hero-spotlight-img" src="trio_balls.jpg" alt="Official 3-Color Match Balls" class="w-4/5 h-4/5 object-contain transition-all duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(circle at 50% 50%, transparent 40%, rgba(1, 7, 54, 0.7) 100%);"></div>
+          </div>
+
+          <!-- Title & Price -->
+          <div class="flex items-start justify-between gap-4 mb-4">
+            <div>
+              <h3 id="hero-spotlight-title" class="text-lg font-bold text-[#FCF1D0] leading-tight mb-1">Official Match Ball Trio (Red • White • Pink)</h3>
+              <p id="hero-spotlight-desc" class="text-xs text-[#FCF1D0]/60">Complete 3-color test pack featuring official Red, White, and Pink 4-piece leather balls.</p>
+            </div>
+            <div class="text-right">
+              <span id="hero-spotlight-price" class="text-xl font-bold font-mono text-[#FCF1D0]">$155.00</span>
+              <span class="block text-[10px] text-[#FCF1D0]/40 font-mono">Club Tier: $128</span>
+            </div>
+          </div>
+
+          <!-- Interactive 3-Color Ball Swatch Switcher -->
+          <div class="flex items-center justify-between gap-2 p-2 rounded-xl bg-[#010736]/80 border border-[#FCF1D0]/15 mb-5">
+            <span class="text-[10px] font-mono text-[#FCF1D0]/50 uppercase tracking-wider pl-1">Select Colorway:</span>
+            <div class="flex items-center gap-2">
+              <button onclick="setHeroBallColor('trio', this)" title="3-Ball Trio Set" class="hero-swatch px-2 py-0.5 rounded text-[10px] font-mono border border-[#FCF1D0] bg-[#22396F] text-[#FCF1D0]">Trio</button>
+              <button onclick="setHeroBallColor('red', this)" title="Traditional Cherry Red" class="hero-swatch swatch-btn bg-[#8B1818] border-transparent" style="background-color: #8B1818;"></button>
+              <button onclick="setHeroBallColor('white', this)" title="Limited-Overs White" class="hero-swatch swatch-btn bg-white border-transparent" style="background-color: #FFFFFF;"></button>
+              <button onclick="setHeroBallColor('pink', this)" title="Twilight Pink Day-Night" class="hero-swatch swatch-btn bg-[#D9486A] border-transparent" style="background-color: #D9486A;"></button>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex items-center gap-3">
+            <button onclick="addHeroSpotlightToCart()" class="w-full btn-royal py-3 rounded-full text-xs font-semibold uppercase tracking-wider text-[#FCF1D0] flex items-center justify-center gap-2 cursor-pointer shadow-lg">
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+              <span>Add to Bag</span>
+            </button>
+            <button onclick="openHeroSpotlightQuickView()" class="p-3 rounded-full border border-[#FCF1D0]/20 hover:border-[#FCF1D0]/50 bg-[#0D1C42] text-[#FCF1D0]/80 hover:text-[#FCF1D0] transition-colors cursor-pointer" title="Inspect 8K Specifications">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 4. TRUST BAR [LIGHT: WARM CREAM #FCF1D0 WITH WHITE CARDS]                 -->
+  <!-- ========================================================================= -->
+  <section class="bg-[#FCF1D0] py-10 px-6 md:px-12 border-b border-[#010736]/10">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      
+      <div class="bg-white p-5 rounded-2xl border border-[#010736]/08 shadow-sm flex items-start gap-4">
+        <div class="w-10 h-10 rounded-xl bg-[#010736] text-[#FCF1D0] flex items-center justify-center shrink-0">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold text-[#010736] uppercase tracking-wider mb-1">ICC & BCCI Certified</h4>
+          <p class="text-[11px] text-[#010736]/70 leading-normal">Conforms to MCC Law 4 across all 3 ball color specifications.</p>
+        </div>
+      </div>
+
+      <div class="bg-white p-5 rounded-2xl border border-[#010736]/08 shadow-sm flex items-start gap-4">
+        <div class="w-10 h-10 rounded-xl bg-[#010736] text-[#FCF1D0] flex items-center justify-center shrink-0">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold text-[#010736] uppercase tracking-wider mb-1">7-Day Express Air Courier</h4>
+          <p class="text-[11px] text-[#010736]/70 leading-normal">White-glove international air dispatch to regional cricket clubs.</p>
+        </div>
+      </div>
+
+      <div class="bg-white p-5 rounded-2xl border border-[#010736]/08 shadow-sm flex items-start gap-4">
+        <div class="w-10 h-10 rounded-xl bg-[#010736] text-[#FCF1D0] flex items-center justify-center shrink-0">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L5 5m7 7l-7 7"/></svg>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold text-[#010736] uppercase tracking-wider mb-1">Handcrafted Willow</h4>
+          <p class="text-[11px] text-[#010736]/70 leading-normal">Select Grade 1+ English willow clefts pressed for all 3 ball types.</p>
+        </div>
+      </div>
+
+      <div class="bg-white p-5 rounded-2xl border border-[#010736]/08 shadow-sm flex items-start gap-4">
+        <div class="w-10 h-10 rounded-xl bg-[#010736] text-[#FCF1D0] flex items-center justify-center shrink-0">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold text-[#010736] uppercase tracking-wider mb-1">Club Wholesale Network</h4>
+          <p class="text-[11px] text-[#010736]/70 leading-normal">Custom 3-color carton allocations with 35% margin & Net 30 terms.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 5. BROWSE BY DISCIPLINE [LIGHT: WARM CREAM #FCF1D0 WITH WHITE CARDS]       -->
+  <!-- ========================================================================= -->
+  <section class="bg-[#FCF1D0] py-12 px-6 md:px-12">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="flex items-end justify-between mb-8">
+        <div>
+          <span class="text-[10px] tracking-[0.25em] uppercase font-bold text-[#010736]/60 block mb-1">EQUIPMENT CATEGORIES</span>
+          <h2 class="heading-light text-2xl sm:text-3xl font-bold">Browse by Discipline</h2>
+        </div>
+        <button onclick="filterDiscipline('All')" class="text-xs font-mono text-[#010736]/70 hover:text-[#010736] font-semibold transition-colors cursor-pointer flex items-center gap-1">
+          <span>View All Products</span>
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+        
+        <!-- Category 1: Match Balls (Featuring 3 Colors Trio!) -->
+        <div onclick="filterDiscipline('Match Balls')" class="bg-white p-5 rounded-2xl border border-[#010736]/10 shadow-sm flex flex-col items-center text-center cursor-pointer group hover:border-[#22396F] transition-all">
+          <div class="w-16 h-16 rounded-full bg-[#010736] border border-[#010736]/20 flex items-center justify-center p-2 mb-3 overflow-hidden">
+            <img src="trio_balls.jpg" class="w-full h-full object-contain">
+          </div>
+          <span class="text-xs font-bold text-[#010736] group-hover:text-[#22396F] transition-colors">Match Balls</span>
+          <span class="text-[10px] text-[#010736]/60 font-mono mt-0.5">Red • White • Pink</span>
+          <div class="flex items-center gap-1 mt-1.5">
+            <span class="w-2 h-2 rounded-full bg-[#8B1818]"></span>
+            <span class="w-2 h-2 rounded-full bg-slate-300 border border-slate-400"></span>
+            <span class="w-2 h-2 rounded-full bg-[#D9486A]"></span>
+          </div>
+        </div>
+
+        <!-- Category 2: Willow Bats -->
+        <div onclick="filterDiscipline('Willow Bats')" class="bg-white p-5 rounded-2xl border border-[#010736]/10 shadow-sm flex flex-col items-center text-center cursor-pointer group hover:border-[#22396F] transition-all">
+          <div class="w-16 h-16 rounded-full bg-[#010736] border border-[#010736]/20 flex items-center justify-center p-2 mb-3 overflow-hidden">
+            <img src="hero.jpg" class="w-full h-full object-contain">
+          </div>
+          <span class="text-xs font-bold text-[#010736] group-hover:text-[#22396F] transition-colors">Willow Bats</span>
+          <span class="text-[10px] text-[#010736]/60 font-mono mt-0.5">Grade 1+ Reserve</span>
+          <span class="text-[9px] font-mono text-emerald-600 mt-1">Calibrated for 3 Balls</span>
+        </div>
+
+        <!-- Category 3: Match Jerseys -->
+        <div onclick="filterDiscipline('Apparel')" class="bg-white p-5 rounded-2xl border border-[#010736]/10 shadow-sm flex flex-col items-center text-center cursor-pointer group hover:border-[#22396F] transition-all">
+          <div class="w-16 h-16 rounded-full bg-[#010736] border border-[#010736]/20 flex items-center justify-center p-2 mb-3 overflow-hidden">
+            <img src="jersey.jpg" class="w-full h-full object-contain">
+          </div>
+          <span class="text-xs font-bold text-[#010736] group-hover:text-[#22396F] transition-colors">Match Jerseys</span>
+          <span class="text-[10px] text-[#010736]/60 font-mono mt-0.5">Player 11 Replicas</span>
+          <span class="text-[9px] font-mono text-[#010736]/40 mt-1">Dri-FIT Micro-Mesh</span>
+        </div>
+
+        <!-- Category 4: Box Sets -->
+        <div onclick="filterDiscipline('Bundles')" class="bg-white p-5 rounded-2xl border border-[#010736]/10 shadow-sm flex flex-col items-center text-center cursor-pointer group hover:border-[#22396F] transition-all">
+          <div class="w-16 h-16 rounded-full bg-[#010736] border border-[#010736]/20 flex items-center justify-center p-2 mb-3 overflow-hidden">
+            <img src="multipack.jpg" class="w-full h-full object-contain">
+          </div>
+          <span class="text-xs font-bold text-[#010736] group-hover:text-[#22396F] transition-colors">Box Sets</span>
+          <span class="text-[10px] text-[#010736]/60 font-mono mt-0.5">6-Ball Velour Packs</span>
+          <span class="text-[9px] font-mono text-[#010736]/40 mt-1">2 Red / 2 White / 2 Pink</span>
+        </div>
+
+        <!-- Category 5: All Cricket -->
+        <div onclick="filterDiscipline('All')" class="bg-white p-5 rounded-2xl border border-[#010736]/10 shadow-sm flex flex-col items-center text-center cursor-pointer group hover:border-[#22396F] transition-all col-span-2 sm:col-span-1">
+          <div class="w-16 h-16 rounded-full bg-[#010736] border border-[#010736]/20 flex items-center justify-center p-2 mb-3 overflow-hidden">
+            <img src="final.jpg" class="w-full h-full object-contain">
+          </div>
+          <span class="text-xs font-bold text-[#010736] group-hover:text-[#22396F] transition-colors">Full Catalog</span>
+          <span class="text-[10px] text-[#010736]/60 font-mono mt-0.5">142 Match Items</span>
+          <span class="text-[9px] font-mono text-emerald-600 mt-1">In Stock Dispatch</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 6. CURRENT SEASON MATCH EQUIPMENT [WHITE / LIGHT: CRISP WHITE CARDS]       -->
+  <!-- ========================================================================= -->
+  <section id="inventory-section" class="bg-white py-16 px-6 md:px-12 border-y border-[#010736]/10">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-10">
+        <div>
+          <span class="text-[10px] tracking-[0.25em] uppercase font-bold text-[#22396F] block mb-1">MATCH CERTIFIED GEAR</span>
+          <h2 class="heading-light text-3xl sm:text-4xl font-bold">Current Season Match Equipment</h2>
+          <p class="text-xs text-[#010736]/70 mt-1 font-mono">
+            Every match ball is available in official Cherry Red, Tournament White, or Twilight Pink.
+          </p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex items-center gap-1.5 p-1 rounded-full bg-[#FCF1D0] border border-[#010736]/15 text-xs">
+          <button onclick="filterFormatTab('All', this)" class="format-tab px-4 py-1.5 rounded-full font-bold bg-[#010736] text-[#FCF1D0] cursor-pointer">All Inventory</button>
+          <button onclick="filterFormatTab('Test', this)" class="format-tab px-4 py-1.5 rounded-full font-medium text-[#010736]/80 hover:text-[#010736] cursor-pointer">Test Matches</button>
+          <button onclick="filterFormatTab('Limited', this)" class="format-tab px-4 py-1.5 rounded-full font-medium text-[#010736]/80 hover:text-[#010736] cursor-pointer">Limited Overs</button>
+        </div>
+      </div>
+
+      <!-- Product Cards Grid -->
+      <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Rendered by renderProducts() with interactive 3-color swatches on each ball card! -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 7. TECHNICAL 3-COLOR BALL MATRIX [DARK: #010736 & #0D1C42]                -->
+  <!-- ========================================================================= -->
+  <section id="specs-section" class="bg-[#010736] text-[#FCF1D0] py-20 px-6 md:px-12 relative overflow-hidden">
+    <div class="ambient-hero-glow top-1/2 left-1/3 opacity-30"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      
+      <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-12">
+        <div>
+          <span class="text-[10px] tracking-[0.25em] uppercase font-bold text-emerald-400 block mb-1">
+            PRECISION ENGINEERING COCKPIT
+          </span>
+          <h2 class="heading-dark text-3xl sm:text-4xl font-bold tracking-tight">
+            Technical 3-Color Match Ball Specifications
+          </h2>
+          <p class="text-xs text-[#FCF1D0]/70 mt-1 font-mono">
+            Conforming strictly to MCC Law 4 standards for weight (155.9g – 163g) and circumference (22.4cm – 22.9cm).
+          </p>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0D1C42] border border-[#FCF1D0]/20 text-xs font-mono">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#8B1818]"></span><span>Red</span>
+            <span class="text-[#FCF1D0]/30">•</span>
+            <span class="w-2.5 h-2.5 rounded-full bg-white"></span><span>White</span>
+            <span class="text-[#FCF1D0]/30">•</span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#D9486A]"></span><span>Pink</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Side-by-Side Match Ball Spec Columns -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        
+        <!-- Ball 1: Traditional Cherry Red -->
+        <div class="glass-dark-card rounded-3xl p-6 relative overflow-hidden border border-[#8B1818]/40">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[10px] font-mono uppercase tracking-wider text-[#FCF1D0] bg-[#8B1818]/60 px-2.5 py-1 rounded border border-[#8B1818]">
+              🔴 FIRST CLASS & TEST
+            </span>
+            <span class="w-3 h-3 rounded-full bg-[#8B1818] ring-2 ring-red-400"></span>
+          </div>
+
+          <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-4 bg-[#000414] flex items-center justify-center border border-[#FCF1D0]/10">
+            <img src="red_ball.jpg" alt="Traditional Red Test Ball" class="w-4/5 h-4/5 object-contain">
+          </div>
+
+          <h3 class="text-base font-bold text-[#FCF1D0] mb-1">Traditional Cherry Red Ball</h3>
+          <p class="text-xs text-[#FCF1D0]/70 mb-4">Alum-tanned steerhide with natural grease for 80-over conventional & reverse swing.</p>
+
+          <table class="w-full text-xs text-[#FCF1D0]/80 space-y-2 border-t border-[#FCF1D0]/10 pt-3">
+            <tr class="flex justify-between py-1 border-b border-[#FCF1D0]/10">
+              <td class="text-[#FCF1D0]/50">Format</td>
+              <td class="text-[#FCF1D0] font-mono font-bold">Multi-Day Tests (4–5 Days)</td>
+            </tr>
+            <tr class="flex justify-between py-1 border-b border-[#FCF1D0]/10">
+              <td class="text-[#FCF1D0]/50">Replacement</td>
+              <td class="text-[#FCF1D0] font-mono">80 Overs Mandatory</td>
+            </tr>
+            <tr class="flex justify-between py-1 border-b border-[#FCF1D0]/10">
+              <td class="text-[#FCF1D0]/50">Seam Thread</td>
+              <td class="text-[#FCF1D0] font-mono">80 Hand-Stitched Linen</td>
+            </tr>
+            <tr class="flex justify-between py-1 border-b border-[#FCF1D0]/10">
+              <td class="text-[#FCF1D0]/50">Core Material</td>
+              <td class="text-[#FCF1D0] font-mono">Portuguese Cork & Rubber</td>
+            </tr>
+            <tr class="flex justify-between py-1">
+              <td class="text-[#FCF1D0]/50">Weight</td>
+              <td class="text-[#FCF1D0] font-mono font-bold">155.9g – 163.0g</td>
+            </tr>
+          </table>
+
+          <div class="mt-4 pt-3 border-t border-[#FCF1D0]/10 flex items-center justify-between">
+            <span class="text-xs font-mono font-bold text-[#FCF1D0]">$44.00</span>
+            <button onclick="addToCart('p5', 'red')" class="btn-royal px-3.5 py-1.5 rounded-full text-xs font-semibold">Add Red</button>
+          </div>
+        </div>
+
+        <!-- Ball 2: Limited-Overs White -->
+        <div class="glass-dark-card rounded-3xl p-6 relative overflow-hidden border border-white/30">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[10px] font-mono uppercase tracking-wider text-[#010736] bg-white px-2.5 py-1 rounded font-bold">
+              ⚪ LIMITED OVERS / T20
+            </span>
+            <span class="w-3 h-3 rounded-full bg-white ring-2 ring-slate-300"></span>
+          </div>
+
+          <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-4 bg-[#000414] flex items-center justify-center border border-[#FCF1D0]/10">
+            <img src="white_ball.jpg" alt="Tournament White Ball" class="w-4/5 h-4/5 object-contain">
+          </div>
+
+          <h3 class="text-base font-bold text-[#FCF1D0] mb-1">Limited-Overs White Ball</h3>
+          <p class="text-xs text-[#FCF1D0]/70 mb-4">Polyurethane micro-seal tested for 94% floodlight lux luminance and colored kits.</p>
+
+          <table class="w-full text-xs text-[#FCF1D0]/80 space-y-2 border-t border-[#FCF1D0]/10 pt-3">
+            <tr class="flex justify-between py-1 border-b border-[#FCF1D0]/10">
+              <td class="text-[#FCF1D0]/50">Format</td>
+              <td class="text-[#FCF1D0] font-mono font-bold">50 Overs & T20 Leagues</td>
+            </tr>
+            <tr class="flex justify-between py-1 border-b border-[#FCF1D0]/10">
+              <td class="text-[#FCF1D0]/50">Regulation</td>
+              <td class="text-[#FCF1D0] font-mono">2 New Balls per Innings</td>
+            </tr>
+            <tr class="flex justify-between py-1 border-b border-[#FCF1D0]/10">
+              <td class="text-[#FCF1D0]/50">Seam Thread</td>
+              <td class="text-[#FCF1D0] font-mono">Greased Heavy Polyester</td>
+            </tr>
+            <tr class="flex justify-between py-1 border-b border-[#FCF1D0]/10">
+              <td class="text-[#FCF1D0]/50">Luminance</td>
+              <td class="text-[#FCF1D0] font-mono">94% Floodlight Lux Index</td>
+            </tr>
+            <tr class="flex justify-between py-1">
+              <td class="text-[#FCF1D0]/50">Weight</td>
+              <td class="text-[#FCF1D0] font-mono font-bold">155.9g – 163.0g</td>
+            </tr>
+          </table>
+
+          <div class="mt-4 pt-3 border-t border-[#FCF1D0]/10 flex items-center justify-between">
+            <span class="text-xs font-mono font-bold text-[#FCF1D0]">$69.00</span>
+            <button onclick="addToCart('p1', 'white')" class="btn-royal px-3.5 py-1.5 rounded-full text-xs font-semibold">Add White</button>
+          </div>
+        </div>
+
+        <!-- Ball 3: Twilight Pink Day-Night -->
+        <div class="glass-dark-card rounded-3xl p-6 relative overflow-hidden border border-[#D9486A]/40">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[10px] font-mono uppercase tracking-wider text-[#FCF1D0] bg-[#D9486A]/60 px-2.5 py-1 rounded border border-[#D9486A]">
+              🌸 FLOODLIT DAY-NIGHT
+            </span>
+            <span class="w-3 h-3 rounded-full bg-[#D9486A] ring-2 ring-pink-400"></span>
+          </div>
+
+          <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-4 bg-[#000414] flex items-center justify-center border border-[#FCF1D0]/10">
+            <img src="pink_ball.jpg" alt="Twilight Pink Day-Night Ball" class="w-4/5 h-4/5 object-contain">
+          </div>
+
+          <h3 class="text-base font-bold text-[#FCF1D0] mb-1">Twilight Pink Day-Night Ball</h3>
+          <p class="text-xs text-[#FCF1D0]/70 mb-4">Extra-gloss 7x pigmented lacquer coating with jet-black seam for dusk-session tracking.</p>
+
+          <table class="w-full text-xs text-[#FCF1D0]/80 space-y-2 border-t border-[#FCF1D0]/10 pt-3">
+            <tr class="flex justify-between py-1 border-b border-[#FCF1D0]/10">
+              <td class="text-[#FCF1D0]/50">Format</td>
+              <td class="text-[#FCF1D0] font-mono font-bold">Day-Night Test Cricket</td>
+            </tr>
+            <tr class="flex justify-between py-1 border-b border-[#FCF1D0]/10">
+              <td class="text-[#FCF1D0]/50">Twilight Spec</td>
+              <td class="text-[#FCF1D0] font-mono">High-Chroma Micro-Lacquer</td>
+            </tr>
+            <tr class="flex justify-between py-1 border-b border-[#FCF1D0]/10">
+              <td class="text-[#FCF1D0]/50">Seam Contrast</td>
+              <td class="text-[#FCF1D0] font-mono">Jet Black & White Stitches</td>
+            </tr>
+            <tr class="flex justify-between py-1 border-b border-[#FCF1D0]/10">
+              <td class="text-[#FCF1D0]/50">Abrasion Res.</td>
+              <td class="text-[#FCF1D0] font-mono">+35% vs Red Match Ball</td>
+            </tr>
+            <tr class="flex justify-between py-1">
+              <td class="text-[#FCF1D0]/50">Weight</td>
+              <td class="text-[#FCF1D0] font-mono font-bold">155.9g – 163.0g</td>
+            </tr>
+          </table>
+
+          <div class="mt-4 pt-3 border-t border-[#FCF1D0]/10 flex items-center justify-between">
+            <span class="text-xs font-mono font-bold text-[#FCF1D0]">$52.00</span>
+            <button onclick="addToCart('p4', 'pink')" class="btn-royal px-3.5 py-1.5 rounded-full text-xs font-semibold">Add Pink</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Master Trio Banner with trio_balls.jpg -->
+      <div class="glass-dark-card rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 border border-[#FCF1D0]/20">
+        <div class="flex items-center gap-5">
+          <div class="w-20 h-20 rounded-2xl bg-[#000414] border border-[#FCF1D0]/20 p-2 flex items-center justify-center shrink-0">
+            <img src="trio_balls.jpg" class="w-full h-full object-contain">
+          </div>
+          <div>
+            <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-[#22396F]/50 text-[10px] font-mono text-[#FCF1D0] mb-1">
+              ALL 3 REGULATION COLORS IN ONE SUITE
+            </div>
+            <h4 class="text-lg font-bold text-[#FCF1D0]">The Official 3-Ball Test Match Trio Set</h4>
+            <p class="text-xs text-[#FCF1D0]/70">Contains 1x Traditional Cherry Red, 1x Tournament White, and 1x Day-Night Pink in a collector presentation case.</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4 shrink-0">
+          <div class="text-right">
+            <span class="text-xl font-bold font-mono text-[#FCF1D0]">$155.00</span>
+            <span class="block text-[10px] font-mono text-emerald-400">Save $10 on Trio</span>
+          </div>
+          <button onclick="addTrioSetToCart()" class="btn-royal px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wider">
+            Add 3-Ball Trio
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 8. MANUFACTURING DOSSIER [LIGHT: WARM CREAM #FCF1D0]                      -->
+  <!-- ========================================================================= -->
+  <section class="bg-[#FCF1D0] py-14 px-6 md:px-12 border-b border-[#010736]/10">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-[10px] tracking-[0.25em] uppercase font-bold text-[#010736]/60 mb-2 font-mono">MANUFACTURING DOSSIER</div>
+      <h3 class="heading-light text-2xl sm:text-3xl font-bold mb-6">Hand-Stitched vs Machine-Stitched Across All 3 Colors</h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-2xl border border-[#010736]/10 shadow-sm">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-sm font-bold text-[#010736]">Hand-Stitched (80-Stitch Prominent Seam)</span>
+            <span class="text-[10px] font-mono font-bold text-[#22396F] bg-[#FCF1D0] px-2.5 py-0.5 rounded">First-Class Match Spec</span>
+          </div>
+          <p class="text-xs text-[#010736]/70 leading-relaxed mb-4">
+            Available across Red, White, and Pink match balls. Crafted with 78 to 82 individual hand stitches per hemisphere. Produces a distinct 1.4mm ridge giving bowlers immediate seam purchase and sharp lateral trajectory off the turf.
+          </p>
+          <div class="flex items-center gap-2 text-[10px] font-mono text-[#010736]/50">
+            <span>SEAM PURCHASE: 9.8 / 10</span>
+            <span>•</span>
+            <span>SHARP CUT OFF PITCH</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-[#010736]/10 shadow-sm">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-sm font-bold text-[#010736]">Machine-Stitched (Low-Profile Club Seam)</span>
+            <span class="text-[10px] font-mono text-[#010736]/60 bg-[#010736]/05 px-2.5 py-0.5 rounded">Academy & Nets</span>
+          </div>
+          <p class="text-xs text-[#010736]/70 leading-relaxed mb-4">
+            Calibrated 1.1mm uniform seam. Provides prolonged durability across hard abrasive concrete nets and synthetic pitches without bursting structural quadrant fibers.
+          </p>
+          <div class="flex items-center gap-2 text-[10px] font-mono text-[#010736]/50">
+            <span>DURABILITY RATING: 9.9 / 10</span>
+            <span>•</span>
+            <span>SYNTHETIC TURF OPTIMIZED</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 9. INSTITUTIONAL WHOLESALE & CUSTOM TEAM KITS [DARK: #010736]             -->
+  <!-- ========================================================================= -->
+  <section id="wholesale-section" class="bg-[#010736] text-[#FCF1D0] py-20 px-6 md:px-12 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 relative z-10">
+      
+      <!-- Wholesale 24-Ball Carton Custom Split -->
+      <div class="glass-dark-card p-8 rounded-3xl flex flex-col justify-between">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#22396F]/50 text-[10px] font-mono text-[#FCF1D0] mb-4">
+            CUSTOM 3-COLOR CARTON ALLOCATION
+          </div>
+          <h3 class="heading-dark text-2xl sm:text-3xl font-bold mb-3">
+            Club Bulk Invoicing & Ball Subscriptions
+          </h3>
+          <p class="text-xs sm:text-sm text-[#FCF1D0]/70 leading-relaxed mb-6">
+            Unlock wholesale rates up to 35% off on carton boxes of 24 match balls. Allocate your 24 balls across Red, White, and Pink to match your club's weekend test leagues, T20 cup, and floodlit matches.
+          </p>
+
+          <!-- 3-Color Carton Allocation Bar -->
+          <div class="p-4 rounded-2xl bg-[#000414] border border-[#FCF1D0]/10 mb-6">
+            <div class="text-[10px] font-mono text-[#FCF1D0]/70 uppercase mb-2 flex justify-between">
+              <span>24-Ball Carton Color Split</span>
+              <span class="text-emerald-400">Total: 24 Balls</span>
+            </div>
+            <div class="grid grid-cols-3 gap-2 text-center text-xs font-mono">
+              <div class="p-2 rounded-xl bg-[#8B1818]/40 border border-[#8B1818]">
+                <span class="block text-base font-bold text-red-200">12</span>
+                <span class="text-[9px] text-[#FCF1D0]/60">Red Balls</span>
+              </div>
+              <div class="p-2 rounded-xl bg-white/20 border border-white/40">
+                <span class="block text-base font-bold text-white">6</span>
+                <span class="text-[9px] text-[#FCF1D0]/60">White Balls</span>
+              </div>
+              <div class="p-2 rounded-xl bg-[#D9486A]/40 border border-[#D9486A]">
+                <span class="block text-base font-bold text-pink-200">6</span>
+                <span class="text-[9px] text-[#FCF1D0]/60">Pink Balls</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button onclick="openWholesaleModal()" class="btn-royal px-6 py-3 rounded-full text-xs font-semibold cursor-pointer">
+            Configure 24-Ball Carton ($864)
+          </button>
+          <button onclick="openWholesaleModal()" class="px-5 py-3 rounded-full text-xs text-[#FCF1D0]/70 border border-[#FCF1D0]/20 bg-[#0D1C42] cursor-pointer">
+            Direct VAT/GST Invoice
+          </button>
+        </div>
+      </div>
+
+      <!-- Custom Sublimated Team Kits -->
+      <div class="glass-dark-card p-8 rounded-3xl flex flex-col justify-between">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-[10px] font-mono text-emerald-300 mb-4">
+            10-DAY GUARANTEED CLUB DISPATCH
+          </div>
+          <h3 class="heading-dark text-2xl sm:text-3xl font-bold mb-3">
+            Custom Sublimated Team Kits
+          </h3>
+          <p class="text-xs sm:text-sm text-[#FCF1D0]/70 leading-relaxed mb-6">
+            Design your club's full match-day attire tailored for red-ball multi-day whites or vibrant limited-overs colored kits with sublimated crests and sponsors.
+          </p>
+
+          <div class="relative w-full h-32 rounded-2xl overflow-hidden mb-6 bg-[#000414] flex items-center justify-center border border-[#FCF1D0]/10">
+            <img src="jersey.jpg" class="w-full h-full object-cover opacity-80">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#010736] via-transparent to-transparent"></div>
+            <div class="absolute bottom-3 left-4 text-[10px] font-mono text-[#FCF1D0]/80">
+              Equipping 680+ Leagues Worldwide
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button onclick="openKitBuilderModal()" class="btn-royal px-6 py-3 rounded-full text-xs font-semibold flex items-center gap-2 cursor-pointer">
+            <span>Launch 3D Kit Builder</span>
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </button>
+          <span class="text-[11px] text-[#FCF1D0]/50 font-mono">Squad packs from 11 players</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 10. EXPERIENCE CENTERS [LIGHT: WARM CREAM #FCF1D0 WITH WHITE CARD]        -->
+  <!-- ========================================================================= -->
+  <section class="bg-[#FCF1D0] py-12 px-6 md:px-12 border-b border-[#010736]/10">
+    <div class="max-w-7xl mx-auto bg-white p-6 sm:p-8 rounded-3xl border border-[#010736]/10 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-2xl bg-[#010736] text-[#FCF1D0] flex items-center justify-center shrink-0">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <div>
+          <span class="text-[9px] font-mono tracking-widest text-[#010736]/60 uppercase block">IN-PERSON VIP BIO-MECHANICS</span>
+          <h4 class="text-base sm:text-lg font-bold text-[#010736]">Flagship Experience Centers in Mumbai & Sydney</h4>
+          <p class="text-xs text-[#010736]/70">Test all 3 ball colors against hand-pressed English willow clefts using high-speed launch monitors.</p>
+        </div>
+      </div>
+      <button onclick="openVIPModal()" class="btn-navy px-6 py-3 rounded-full text-xs font-semibold shrink-0 cursor-pointer">
+        Book VIP Fitting Slot
+      </button>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 11. FOOTER [DARK: DEEP NAVY #010736]                                      -->
+  <!-- ========================================================================= -->
+  <footer class="bg-[#010736] text-[#FCF1D0] pt-16 pb-12 px-6 md:px-12 text-xs border-t border-[#FCF1D0]/10">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+      
+      <div class="space-y-3">
+        <div class="flex items-center gap-2.5">
+          <div class="w-6 h-6 rounded-full bg-[#FCF1D0] text-[#010736] font-black text-xs flex items-center justify-center">C</div>
+          <span class="text-sm font-bold tracking-wider text-[#FCF1D0]">CRICKET ATELIER</span>
+        </div>
+        <p class="text-[#FCF1D0]/60 leading-relaxed text-[11px]">
+          Precision match equipment supplier delivering official 4-piece Cherry Red, Tournament White, and Twilight Pink match balls, plus Grade 1+ English willow clefts.
+        </p>
+        <div class="flex items-center gap-2 pt-2">
+          <span class="w-3 h-3 rounded-full bg-[#8B1818]" title="Cherry Red"></span>
+          <span class="w-3 h-3 rounded-full bg-white" title="Tournament White"></span>
+          <span class="w-3 h-3 rounded-full bg-[#D9486A]" title="Twilight Pink"></span>
+          <span class="text-[10px] font-mono text-[#FCF1D0]/50">3 Official Colorways</span>
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <span class="text-[10px] font-mono uppercase tracking-widest text-[#FCF1D0]/40 block mb-2">3-COLOR MATCH BALLS</span>
+        <div><a href="#specs-section" class="text-[#FCF1D0]/70 hover:text-[#FCF1D0]">Traditional Cherry Red ($44)</a></div>
+        <div><a href="#specs-section" class="text-[#FCF1D0]/70 hover:text-[#FCF1D0]">Limited-Overs White ($69)</a></div>
+        <div><a href="#specs-section" class="text-[#FCF1D0]/70 hover:text-[#FCF1D0]">Twilight Pink Day-Night ($52)</a></div>
+        <div><a href="#specs-section" class="text-[#FCF1D0]/70 hover:text-[#FCF1D0]">Official 3-Ball Trio Pack ($155)</a></div>
+      </div>
+
+      <div class="space-y-2">
+        <span class="text-[10px] font-mono uppercase tracking-widest text-[#FCF1D0]/40 block mb-2">WILLOW & APPAREL</span>
+        <div><a href="#inventory-section" class="text-[#FCF1D0]/70 hover:text-[#FCF1D0]">Grade 1+ English Willow ($285)</a></div>
+        <div><a href="#inventory-section" class="text-[#FCF1D0]/70 hover:text-[#FCF1D0]">Pro Match Jersey in Blue ($69)</a></div>
+        <div><a href="#wholesale-section" class="text-[#FCF1D0]/70 hover:text-[#FCF1D0]">Custom Sublimated Kits</a></div>
+        <div><a href="#wholesale-section" class="text-[#FCF1D0]/70 hover:text-[#FCF1D0]">24-Ball Wholesale Cartons</a></div>
+      </div>
+
+      <div class="space-y-3">
+        <span class="text-[10px] font-mono uppercase tracking-widest text-[#FCF1D0]/40 block mb-1">JOIN THE PAVILION</span>
+        <p class="text-[11px] text-[#FCF1D0]/60">Receive notification of limited-edition 3-color ball harvests and cleft batches.</p>
+        <div class="flex items-center gap-2">
+          <input type="email" placeholder="Enter club email" class="w-full bg-[#0D1C42] border border-[#FCF1D0]/20 rounded-xl px-3 py-2 text-xs text-[#FCF1D0] focus:outline-none">
+          <button onclick="subscribeNewsletter()" class="btn-royal px-4 py-2 rounded-xl text-xs font-semibold cursor-pointer">Join</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto pt-6 border-t border-[#FCF1D0]/10 flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#FCF1D0]/40 gap-4">
+      <div>© 2026 CRICKET ATELIER PVT LTD. All rights reserved. Conforms to MCC Law 4.</div>
+      <div class="flex items-center gap-6">
+        <span>RED (TEST)</span>
+        <span>WHITE (ODI/T20)</span>
+        <span>PINK (DAY-NIGHT)</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- SLIDE-OUT CART DRAWER                                                     -->
+  <!-- ========================================================================= -->
+  <div id="cart-drawer-overlay" onclick="toggleCart()" class="fixed inset-0 bg-black/70 backdrop-blur-md z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  <aside id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-[#010736] border-l border-[#FCF1D0]/15 z-50 transform translate-x-full transition-transform duration-300 ease-out flex flex-col p-6 shadow-2xl text-[#FCF1D0]">
+    
+    <div class="flex items-center justify-between pb-4 border-b border-[#FCF1D0]/10">
+      <div class="flex items-center gap-2">
+        <h3 class="text-base font-bold text-[#FCF1D0]">Equipment Bag</h3>
+        <span id="drawer-count-badge" class="text-xs font-mono text-[#FCF1D0]/60">(0 items)</span>
+      </div>
+      <button onclick="toggleCart()" class="p-2 rounded-full hover:bg-[#0D1C42] text-[#FCF1D0]/70 hover:text-[#FCF1D0] cursor-pointer">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Free Air Express Progress Meter -->
+    <div class="py-3 border-b border-[#FCF1D0]/10 text-xs">
+      <div class="flex justify-between text-[11px] mb-1.5 font-mono">
+        <span id="shipping-progress-text">Add $131 for Free Global Air Express</span>
+        <span id="shipping-percent">34%</span>
+      </div>
+      <div class="w-full h-1.5 bg-[#0D1C42] rounded-full overflow-hidden">
+        <div id="shipping-progress-bar" class="h-full bg-gradient-to-r from-[#22396F] to-[#FCF1D0] transition-all duration-300" style="width: 34%;"></div>
+      </div>
+    </div>
+
+    <!-- Cart Item List -->
+    <div id="cart-items-container" class="flex-1 overflow-y-auto py-4 space-y-3">
+      <!-- Injected by renderCart() -->
+    </div>
+
+    <div class="pt-4 border-t border-[#FCF1D0]/10 space-y-3">
+      <div class="flex justify-between text-xs text-[#FCF1D0]/70 font-mono">
+        <span>Subtotal</span>
+        <span id="cart-subtotal" class="text-[#FCF1D0] font-bold">$0.00</span>
+      </div>
+      <div class="flex justify-between text-xs text-[#FCF1D0]/70 font-mono">
+        <span>Global Air Courier</span>
+        <span id="cart-shipping" class="text-emerald-400">Complimentary</span>
+      </div>
+      <div class="flex justify-between text-sm font-bold text-[#FCF1D0] pt-2 border-t border-[#FCF1D0]/10 font-mono">
+        <span>Total Due</span>
+        <span id="cart-total">$0.00</span>
+      </div>
+
+      <button onclick="checkoutCart()" class="w-full btn-royal py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider text-[#FCF1D0] cursor-pointer shadow-xl flex items-center justify-center gap-2">
+        <span>Proceed to Secure Dispatch</span>
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </button>
+
+      <div class="text-[10px] text-center font-mono text-[#FCF1D0]/40">
+        🔒 256-Bit SSL Encrypted • Direct ICC Certified Dispatch
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- ========================================================================= -->
+  <!-- QUICK-VIEW MODAL WITH 3-COLOR BALL SELECTOR                               -->
+  <!-- ========================================================================= -->
+  <div id="quick-view-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xl opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="glass-dark-card max-w-2xl w-full rounded-3xl p-6 md:p-8 border border-[#FCF1D0]/20 shadow-2xl relative text-[#FCF1D0] max-h-[90vh] overflow-y-auto">
+      
+      <button onclick="closeQuickView()" class="absolute top-6 right-6 p-2 rounded-full bg-[#010736] border border-[#FCF1D0]/20 text-[#FCF1D0]/70 hover:text-[#FCF1D0] cursor-pointer">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+        <div class="w-full aspect-square rounded-2xl bg-[#000414] border border-[#FCF1D0]/10 flex items-center justify-center p-4">
+          <img id="qv-img" src="" class="w-4/5 h-4/5 object-contain">
+        </div>
+
+        <div>
+          <div id="qv-tag" class="text-[9px] font-mono uppercase tracking-widest text-[#FCF1D0]/70 bg-[#22396F]/50 px-2.5 py-0.5 rounded border border-[#FCF1D0]/15 inline-block mb-2">
+            TAG
+          </div>
+          <h3 id="qv-title" class="text-xl font-bold text-[#FCF1D0] mb-2 leading-tight">Title</h3>
+          <div class="flex items-center gap-3 mb-3">
+            <span id="qv-price" class="text-2xl font-bold font-mono text-[#FCF1D0]">$0.00</span>
+            <span id="qv-bulk-price" class="text-xs font-mono text-emerald-400">Club Tier: $0.00</span>
+          </div>
+          <p id="qv-desc" class="text-xs text-[#FCF1D0]/75 leading-relaxed mb-4">
+            Description
+          </p>
+
+          <!-- 3-Color Ball Selector in Quick View (if applicable) -->
+          <div id="qv-color-selector" class="mb-5 p-3 rounded-xl bg-[#010736] border border-[#FCF1D0]/15">
+            <label class="block text-[10px] font-mono text-[#FCF1D0]/60 uppercase mb-2">Available in All 3 Regulation Colors:</label>
+            <div class="flex items-center gap-3">
+              <button onclick="setQVColor('red')" id="qv-btn-red" class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-transparent text-xs font-mono cursor-pointer">
+                <span class="w-3 h-3 rounded-full bg-[#8B1818]"></span>
+                <span>Red</span>
+              </button>
+              <button onclick="setQVColor('white')" id="qv-btn-white" class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-transparent text-xs font-mono cursor-pointer">
+                <span class="w-3 h-3 rounded-full bg-white"></span>
+                <span>White</span>
+              </button>
+              <button onclick="setQVColor('pink')" id="qv-btn-pink" class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-transparent text-xs font-mono cursor-pointer">
+                <span class="w-3 h-3 rounded-full bg-[#D9486A]"></span>
+                <span>Pink</span>
+              </button>
+            </div>
+          </div>
+
+          <button id="qv-add-btn" onclick="addFromQuickView()" class="w-full btn-royal py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider text-[#FCF1D0] cursor-pointer shadow-lg flex items-center justify-center gap-2">
+            <span>Add Selected Color to Bag</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 3D TEAM KIT & WHOLESALE MODALS                                            -->
+  <!-- ========================================================================= -->
+  <div id="kit-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xl opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="glass-dark-card max-w-xl w-full rounded-3xl p-6 md:p-8 border border-[#FCF1D0]/20 shadow-2xl relative text-[#FCF1D0]">
+      <button onclick="closeKitModal()" class="absolute top-6 right-6 p-2 rounded-full bg-[#010736] border border-[#FCF1D0]/20 text-[#FCF1D0]/70 hover:text-[#FCF1D0]">✕</button>
+      <div class="text-[10px] tracking-[0.25em] uppercase font-bold text-[#FCF1D0]/50 mb-1">SUBLIMATION ATELIER</div>
+      <h3 class="heading-dark text-2xl font-bold mb-2">Custom Sublimated Team Kits</h3>
+      <p class="text-xs text-[#FCF1D0]/70 mb-6">Equip your club with custom micro-mesh matchwear tailored for Red or White ball cricket.</p>
+
+      <div class="space-y-4 mb-6 text-xs">
+        <div>
+          <label class="block text-[#FCF1D0]/70 uppercase tracking-wider text-[10px] mb-2 font-medium">Club Team Name</label>
+          <input type="text" placeholder="e.g. Melbourne Royals CC" class="w-full p-3 rounded-xl bg-[#000414] border border-[#FCF1D0]/20 text-[#FCF1D0] font-mono text-xs focus:outline-none">
+        </div>
+        <div>
+          <label class="block text-[#FCF1D0]/70 uppercase tracking-wider text-[10px] mb-2 font-medium">Primary Format & Ball Match</label>
+          <div class="grid grid-cols-3 gap-2">
+            <button class="p-2.5 rounded-xl border border-[#FCF1D0] bg-[#22396F] text-[#FCF1D0] text-center font-mono text-[11px]">🔴 Red Ball Whites</button>
+            <button class="p-2.5 rounded-xl border border-[#FCF1D0]/20 bg-[#000414] text-[#FCF1D0]/70 text-center font-mono text-[11px]">⚪ T20 Color Kit</button>
+            <button class="p-2.5 rounded-xl border border-[#FCF1D0]/20 bg-[#000414] text-[#FCF1D0]/70 text-center font-mono text-[11px]">🌸 Day-Night Kit</button>
+          </div>
+        </div>
+      </div>
+      <button onclick="confirmKitInquiry()" class="w-full btn-royal py-3.5 rounded-full text-xs font-semibold">Request 3D Render & Fabric Swatches</button>
+      <div id="kit-confirmed-msg" class="hidden mt-3 p-3 rounded-xl bg-emerald-950/60 border border-emerald-500/30 text-emerald-300 text-xs text-center font-mono">
+        ✓ 3D Sublimation Dossier submitted. A kit designer will email digital proof within 4 hours.
+      </div>
+    </div>
+  </div>
+
+  <div id="vip-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xl opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="glass-dark-card max-w-lg w-full rounded-3xl p-6 md:p-8 border border-[#FCF1D0]/20 shadow-2xl relative text-[#FCF1D0]">
+      <button onclick="closeVIPModal()" class="absolute top-6 right-6 p-2 rounded-full bg-[#010736] border border-[#FCF1D0]/20 text-[#FCF1D0]/70 hover:text-[#FCF1D0]">✕</button>
+      <div class="text-[10px] tracking-[0.25em] uppercase font-bold text-[#FCF1D0]/50 mb-1">VIP CONCIERGE</div>
+      <h3 class="heading-dark text-2xl font-bold mb-2">Book Flagship Fitting</h3>
+      <p class="text-xs text-[#FCF1D0]/70 mb-6">Test all 3 ball colors against hand-pressed English willow clefts in Mumbai or Sydney.</p>
+      <button onclick="confirmVIPBooking()" class="w-full btn-royal py-3.5 rounded-full text-xs font-semibold">Confirm VIP Fitting Session</button>
+      <div id="vip-confirmed-msg" class="hidden mt-3 p-3 rounded-xl bg-emerald-950/60 border border-emerald-500/30 text-emerald-300 text-xs text-center font-mono">
+        ✓ Appointment reserved. Concierge will coordinate your slot.
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- JAVASCRIPT: ECOMMERCE ENGINE WITH 3-COLOR BALL INTERACTION                -->
+  <!-- ========================================================================= -->
+  <script>
+    // --- CURRENCY CONVERTER ---
+    let currentCurrency = 'USD';
+    const currencyRates = {
+      USD: { symbol: '$', rate: 1.0 },
+      GBP: { symbol: '£', rate: 0.79 },
+      INR: { symbol: '₹', rate: 83.5 },
+      AUD: { symbol: 'A$', rate: 1.52 }
+    };
+
+    function formatPrice(usdVal) {
+      const cfg = currencyRates[currentCurrency];
+      const converted = Math.round(usdVal * cfg.rate);
+      return `${cfg.symbol}${converted.toLocaleString()}`;
+    }
+
+    function changeCurrency(val) {
+      currentCurrency = val;
+      renderProducts();
+      renderCart();
+      updateHeroSpotlightDisplay();
+    }
+
+    // --- PRODUCTS CATALOG (WITH 3-COLOR BALL CAPABILITY) ---
+    const PRODUCTS = [
+      {
+        id: 'p1',
+        title: 'Tournament 4-Piece Leather Match Ball',
+        tag: 'OFFICIAL MATCH SPEC',
+        rating: '★ 4.9 (127)',
+        discipline: 'Match Balls',
+        format: 'All',
+        priceUSD: 69,
+        bulkPriceUSD: 54,
+        imgKey: 'white_ball',
+        currentColor: 'white',
+        colorOptions: ['red', 'white', 'pink'],
+        desc: 'Select from all 3 regulation colors: Alum-tanned steerhide with 80-stitch seam calibrated for professional competition.',
+        spec1: '156g ICC Match Weight',
+        spec2: '80 Hand-Stitched Seam'
+      },
+      {
+        id: 'p5',
+        title: 'Traditional Cherry Red Alum-Tanned Test Ball',
+        tag: 'FIRST CLASS & TEST',
+        rating: '★ 4.9 (204)',
+        discipline: 'Match Balls',
+        format: 'Test',
+        priceUSD: 44,
+        bulkPriceUSD: 36,
+        imgKey: 'red_ball',
+        currentColor: 'red',
+        colorOptions: ['red'],
+        desc: 'Authentic alum-tanned steerhide, prominent 80-stitch linen seam built for 80 overs of swing and reverse swing.',
+        spec1: '155.9g - 163g Spec',
+        spec2: 'Portuguese Cork Core'
+      },
+      {
+        id: 'p4',
+        title: 'Twilight Pink Day-Night Test Ball',
+        tag: 'FLOODLIT TEST',
+        rating: '★ 4.9 (93)',
+        discipline: 'Match Balls',
+        format: 'Test',
+        priceUSD: 52,
+        bulkPriceUSD: 42,
+        imgKey: 'pink_ball',
+        currentColor: 'pink',
+        colorOptions: ['pink'],
+        desc: 'High-gloss pigmented pink lacquer coating engineered for dusk visibility and prolonged seam retention under floodlights.',
+        spec1: '156g Test Weight',
+        spec2: 'Jet Black Seam Contrast'
+      },
+      {
+        id: 'p6',
+        title: 'The Elite Tournament Collection (6-Ball Box Set)',
+        tag: '3-COLOR BOX SET',
+        rating: '★ 5.0 (61)',
+        discipline: 'Bundles',
+        format: 'All',
+        priceUSD: 132,
+        bulkPriceUSD: 110,
+        imgKey: 'multipack',
+        currentColor: 'trio',
+        colorOptions: [],
+        desc: 'Complete club season set comprising 2 Red, 2 White, and 2 Pink match balls packed in a matte velour travel display case.',
+        spec1: '6 Balls (2R / 2W / 2P)',
+        spec2: 'Velour Collector Box'
+      },
+      {
+        id: 'p2',
+        title: 'Grade 1+ English Willow Handcrafted Bat',
+        tag: 'PRO TEST RESERVE',
+        rating: '★ 5.0 (84)',
+        discipline: 'Willow Bats',
+        format: 'Test',
+        priceUSD: 285,
+        bulkPriceUSD: 240,
+        imgKey: 'hero',
+        currentColor: null,
+        desc: 'Balanced mid-blade sweet spot, 9-11 clean straight grains, hand-pressed cleft calibrated for red, white, and pink match balls.',
+        spec1: '2lb 8.5oz Balanced',
+        spec2: 'Sarawak Multi-Cane'
+      },
+      {
+        id: 'p3',
+        title: 'Pre-Match Pro Dri-FIT Jersey in Athletic Blue',
+        tag: 'OFFICIAL MATCHWEAR',
+        rating: '★ 4.8 (312)',
+        discipline: 'Apparel',
+        format: 'Limited',
+        priceUSD: 69,
+        bulkPriceUSD: 55,
+        imgKey: 'jersey',
+        currentColor: null,
+        desc: 'Authentic micro-mesh performance fabric with laser-cut flank ventilation zones and heat-sealed national emblem.',
+        spec1: '140 GSM Micro-Mesh',
+        spec2: 'Laser Flank Gills'
+      }
+    ];
+
+    // --- CART STATE ---
+    let CART = [
+      { id: 'p1', color: 'white', qty: 2 }
+    ];
+
+    function getImageSrc(key) {
+      if (typeof window.CRICKET_IMAGES !== 'undefined' && window.CRICKET_IMAGES[key]) {
+        return window.CRICKET_IMAGES[key];
+      }
+      return `${key}.jpg`;
+    }
+
+    // --- RENDER PRODUCTS GRID (WITH INTERACTIVE 3-COLOR SWATCHES) ---
+    let currentDiscipline = 'All';
+    let currentFormat = 'All';
+
+    function renderProducts() {
+      const grid = document.getElementById('product-grid');
+      grid.innerHTML = '';
+
+      const filtered = PRODUCTS.filter(p => {
+        const dMatch = (currentDiscipline === 'All') || (p.discipline === currentDiscipline);
+        const fMatch = (currentFormat === 'All') || (p.format === 'All') || (p.format === currentFormat);
+        return dMatch && fMatch;
+      });
+
+      filtered.forEach(p => {
+        const imgSrc = getImageSrc(p.imgKey);
+        const card = document.createElement('div');
+        card.className = 'product-white-card rounded-3xl p-6 flex flex-col justify-between group';
+
+        // Check if product supports 3-color swatch selection
+        const hasSwatches = p.colorOptions && p.colorOptions.length > 1;
+
+        let swatchHtml = '';
+        if (hasSwatches) {
+          swatchHtml = `
+            <div class="flex items-center gap-1.5 p-1 rounded-full bg-[#FCF1D0] border border-[#010736]/10">
+              <button onclick="setCardColor('${p.id}', 'red', this)" title="Red" class="swatch-btn ${p.currentColor === 'red' ? 'active' : ''}" style="background-color: #8B1818;"></button>
+              <button onclick="setCardColor('${p.id}', 'white', this)" title="White" class="swatch-btn ${p.currentColor === 'white' ? 'active' : ''}" style="background-color: #FFFFFF; border: 1px solid #ccc;"></button>
+              <button onclick="setCardColor('${p.id}', 'pink', this)" title="Pink" class="swatch-btn ${p.currentColor === 'pink' ? 'active' : ''}" style="background-color: #D9486A;"></button>
+            </div>
+          `;
+        }
+
+        card.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between mb-3 text-[10px] font-mono">
+              <span class="px-2.5 py-0.5 rounded bg-[#FCF1D0] border border-[#010736]/10 text-[#010736] font-bold">${p.tag}</span>
+              <span class="text-[#010736]/60">${p.rating}</span>
+            </div>
+
+            <!-- Product Image -->
+            <div class="relative w-full aspect-square rounded-2xl bg-[#010736] border border-[#010736]/10 flex items-center justify-center p-4 mb-4 overflow-hidden">
+              <img id="img-${p.id}" src="${imgSrc}" alt="${p.title}" class="w-4/5 h-4/5 object-contain transition-transform duration-500 group-hover:scale-108">
+              <button onclick="openQuickView('${p.id}')" class="absolute inset-0 bg-[#010736]/50 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-xs font-semibold text-[#FCF1D0] gap-1.5 cursor-pointer">
+                <span>Inspect 3D Specs</span>
+              </button>
+            </div>
+
+            <!-- Swatches & Title -->
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-sm font-bold text-[#010736] leading-snug group-hover:text-[#22396F] transition-colors">${p.title}</h3>
+              ${swatchHtml}
+            </div>
+
+            <p class="text-xs text-[#010736]/70 leading-relaxed mb-4">${p.desc}</p>
+          </div>
+
+          <div class="pt-4 border-t border-[#010736]/10 flex items-center justify-between">
+            <div>
+              <span class="text-base font-bold font-mono text-[#010736] block">${formatPrice(p.priceUSD)}</span>
+              <span class="text-[10px] font-mono text-[#010736]/50">Club Tier: ${formatPrice(p.bulkPriceUSD)}</span>
+            </div>
+            <button onclick="addToCart('${p.id}', '${p.currentColor || 'default'}')" class="btn-navy px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-1.5 cursor-pointer shadow-sm">
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+              <span>Add to Bag</span>
+            </button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // Interactive card color swatch switch
+    function setCardColor(prodId, color, btn) {
+      const prod = PRODUCTS.find(p => p.id === prodId);
+      if (!prod) return;
+      prod.currentColor = color;
+      if (color === 'red') prod.imgKey = 'red_ball';
+      else if (color === 'white') prod.imgKey = 'white_ball';
+      else if (color === 'pink') prod.imgKey = 'pink_ball';
+
+      const imgEl = document.getElementById(`img-${prodId}`);
+      if (imgEl) {
+        imgEl.src = getImageSrc(prod.imgKey);
+      }
+
+      // Update active swatch
+      btn.parentElement.querySelectorAll('.swatch-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      playSyntheticClick();
+    }
+
+    function filterDiscipline(d) {
+      currentDiscipline = d;
+      renderProducts();
+      playSyntheticClick();
+      const el = document.getElementById('inventory-section');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function filterFormatTab(f, btn) {
+      currentFormat = f;
+      document.querySelectorAll('.format-tab').forEach(b => {
+        b.className = 'format-tab px-4 py-1.5 rounded-full font-medium text-[#010736]/80 hover:text-[#010736] cursor-pointer';
+      });
+      btn.className = 'format-tab px-4 py-1.5 rounded-full font-bold bg-[#010736] text-[#FCF1D0] cursor-pointer';
+      renderProducts();
+      playSyntheticClick();
+    }
+
+    // --- HERO 3-BALL SPOTLIGHT CONTROLLER ---
+    let currentHeroBallKey = 'trio';
+    const heroBallData = {
+      trio: { title: 'Official Match Ball Trio (Red • White • Pink)', price: 155, desc: 'Complete 3-color test pack featuring official Red, White, and Pink 4-piece leather balls.', badge: 'OFFICIAL 3-COLOR TRIO', img: 'trio_balls' },
+      red: { title: 'Traditional Cherry Red Alum-Tanned Test Ball', price: 44, desc: 'Authentic alum-tanned steerhide with prominent 80-stitch linen seam built for 80 overs of swing.', badge: '🔴 RED MATCH BALL', img: 'red_ball' },
+      white: { title: 'Tournament 4-Piece White Leather Match Ball', price: 69, desc: 'Pigmented white steerhide with polyurethane sealant for 94% floodlight lux visibility.', badge: '⚪ WHITE MATCH BALL', img: 'white_ball' },
+      pink: { title: 'Twilight Pink Day-Night Test Ball', price: 52, desc: 'Extra-gloss 7x pigmented lacquer coating with jet-black seam for floodlit day-night test matches.', badge: '🌸 PINK MATCH BALL', img: 'pink_ball' }
+    };
+
+    function setHeroBallColor(key, btn) {
+      currentHeroBallKey = key;
+      updateHeroSpotlightDisplay();
+      document.querySelectorAll('.hero-swatch').forEach(b => b.classList.remove('active', 'border-[#FCF1D0]', 'bg-[#22396F]'));
+      if (btn) {
+        btn.classList.add('active', 'border-[#FCF1D0]');
+      }
+      playSyntheticClick();
+    }
+
+    function updateHeroSpotlightDisplay() {
+      const data = heroBallData[currentHeroBallKey];
+      document.getElementById('hero-spotlight-img').src = getImageSrc(data.img);
+      document.getElementById('hero-spotlight-title').textContent = data.title;
+      document.getElementById('hero-spotlight-desc').textContent = data.desc;
+      document.getElementById('hero-spotlight-price').textContent = formatPrice(data.price);
+      document.getElementById('hero-spotlight-badge').textContent = data.badge;
+    }
+
+    function addHeroSpotlightToCart() {
+      if (currentHeroBallKey === 'trio') {
+        addToCart('p6', 'trio');
+      } else if (currentHeroBallKey === 'red') {
+        addToCart('p5', 'red');
+      } else if (currentHeroBallKey === 'white') {
+        addToCart('p1', 'white');
+      } else if (currentHeroBallKey === 'pink') {
+        addToCart('p4', 'pink');
+      }
+    }
+
+    function openHeroSpotlightQuickView() {
+      if (currentHeroBallKey === 'trio') openQuickView('p6');
+      else if (currentHeroBallKey === 'red') openQuickView('p5');
+      else if (currentHeroBallKey === 'white') openQuickView('p1');
+      else if (currentHeroBallKey === 'pink') openQuickView('p4');
+    }
+
+    function addTrioSetToCart() {
+      addToCart('p6', 'trio');
+    }
+
+    // --- CART FUNCTIONALITY ---
+    function toggleCart() {
+      const drawer = document.getElementById('cart-drawer');
+      const overlay = document.getElementById('cart-drawer-overlay');
+      const isOpen = !drawer.classList.contains('translate-x-full');
+
+      if (isOpen) {
+        drawer.classList.add('translate-x-full');
+        overlay.classList.add('opacity-0', 'pointer-events-none');
+        overlay.classList.remove('opacity-100', 'pointer-events-auto');
+      } else {
+        drawer.classList.remove('translate-x-full');
+        overlay.classList.remove('opacity-0', 'pointer-events-none');
+        overlay.classList.add('opacity-100', 'pointer-events-auto');
+        renderCart();
+      }
+      playSyntheticClick();
+    }
+
+    function addToCart(productId, color = 'default') {
+      const existing = CART.find(c => c.id === productId && c.color === color);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        CART.push({ id: productId, color: color, qty: 1 });
+      }
+      renderCart();
+      playSyntheticWoodCrack();
+      toggleCart();
+    }
+
+    function updateCartQty(idx, delta) {
+      if (!CART[idx]) return;
+      CART[idx].qty += delta;
+      if (CART[idx].qty <= 0) {
+        CART.splice(idx, 1);
+      }
+      renderCart();
+      playSyntheticClick();
+    }
+
+    function renderCart() {
+      const container = document.getElementById('cart-items-container');
+      const badge = document.getElementById('cart-badge');
+      const drawerBadge = document.getElementById('drawer-count-badge');
+      const subtotalEl = document.getElementById('cart-subtotal');
+      const totalEl = document.getElementById('cart-total');
+      const shippingText = document.getElementById('shipping-progress-text');
+      const shippingBar = document.getElementById('shipping-progress-bar');
+      const shippingPct = document.getElementById('shipping-percent');
+
+      const totalItems = CART.reduce((a, b) => a + b.qty, 0);
+      badge.textContent = totalItems;
+      drawerBadge.textContent = `(${totalItems} items)`;
+
+      container.innerHTML = '';
+      let subtotalUSD = 0;
+
+      if (CART.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-12 text-[#FCF1D0]/40 font-mono text-xs">
+            Your equipment bag is currently empty.
+          </div>
+        `;
+      } else {
+        CART.forEach((c, idx) => {
+          const prod = PRODUCTS.find(p => p.id === c.id);
+          if (!prod) return;
+          const lineTotal = prod.priceUSD * c.qty;
+          subtotalUSD += lineTotal;
+
+          let displayImg = prod.imgKey;
+          if (c.color === 'red') displayImg = 'red_ball';
+          else if (c.color === 'white') displayImg = 'white_ball';
+          else if (c.color === 'pink') displayImg = 'pink_ball';
+
+          let colorLabel = '';
+          if (c.color === 'red') colorLabel = '🔴 Cherry Red';
+          else if (c.color === 'white') colorLabel = '⚪ Tournament White';
+          else if (c.color === 'pink') colorLabel = '🌸 Twilight Pink';
+          else if (c.color === 'trio') colorLabel = '🌟 3-Ball Trio Pack';
+
+          const itemEl = document.createElement('div');
+          itemEl.className = 'p-3 rounded-2xl bg-[#0D1C42]/50 border border-[#FCF1D0]/10 flex items-center justify-between gap-3';
+          itemEl.innerHTML = `
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-xl bg-[#000414] border border-[#FCF1D0]/10 flex items-center justify-center p-1 shrink-0">
+                <img src="${getImageSrc(displayImg)}" class="w-full h-full object-contain">
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-[#FCF1D0] leading-tight">${prod.title}</h4>
+                ${colorLabel ? `<span class="text-[9px] font-mono text-emerald-400 block">${colorLabel}</span>` : ''}
+                <span class="text-[10px] font-mono text-[#FCF1D0]/60">${formatPrice(prod.priceUSD)} each</span>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <div class="flex items-center border border-[#FCF1D0]/20 rounded-lg bg-[#010736] text-xs">
+                <button onclick="updateCartQty(${idx}, -1)" class="px-2 py-0.5 text-[#FCF1D0]/60 hover:text-[#FCF1D0]">-</button>
+                <span class="px-2 py-0.5 font-mono text-[#FCF1D0]">${c.qty}</span>
+                <button onclick="updateCartQty(${idx}, 1)" class="px-2 py-0.5 text-[#FCF1D0]/60 hover:text-[#FCF1D0]">+</button>
+              </div>
+              <span class="text-xs font-mono font-bold text-[#FCF1D0] w-14 text-right">${formatPrice(lineTotal)}</span>
+            </div>
+          `;
+          container.appendChild(itemEl);
+        });
+      }
+
+      subtotalEl.textContent = formatPrice(subtotalUSD);
+      totalEl.textContent = formatPrice(subtotalUSD);
+
+      // Shipping threshold: $200 USD
+      const threshold = 200;
+      if (subtotalUSD >= threshold) {
+        shippingText.textContent = '✓ Complimentary Express Air Courier Unlocked';
+        shippingBar.style.width = '100%';
+        shippingPct.textContent = '100%';
+      } else {
+        const diff = threshold - subtotalUSD;
+        shippingText.textContent = `Add ${formatPrice(diff)} for Free Express Air Courier`;
+        const pct = Math.min(Math.round((subtotalUSD / threshold) * 100), 100);
+        shippingBar.style.width = `${pct}%`;
+        shippingPct.textContent = `${pct}%`;
+      }
+    }
+
+    function checkoutCart() {
+      if (CART.length === 0) {
+        alert("Your bag is empty.");
+        return;
+      }
+      playSyntheticWoodCrack();
+      alert("Order transferred to ICC Certified Global Logistics Dispatch. A test manifest tracking number has been generated.");
+      CART = [];
+      renderCart();
+      toggleCart();
+    }
+
+    // --- QUICK VIEW (WITH 3-COLOR SELECTOR) ---
+    let qvProd = null;
+    let qvSelectedColor = 'white';
+
+    function openQuickView(prodId) {
+      const p = PRODUCTS.find(prod => prod.id === prodId);
+      if (!p) return;
+      qvProd = p;
+      qvSelectedColor = p.currentColor || 'white';
+
+      document.getElementById('qv-title').textContent = p.title;
+      document.getElementById('qv-price').textContent = formatPrice(p.priceUSD);
+      document.getElementById('qv-bulk-price').textContent = `Club Tier: ${formatPrice(p.bulkPriceUSD)}`;
+      document.getElementById('qv-desc').textContent = p.desc;
+      document.getElementById('qv-tag').textContent = p.tag;
+
+      const selectorEl = document.getElementById('qv-color-selector');
+      if (p.colorOptions && p.colorOptions.length > 1) {
+        selectorEl.classList.remove('hidden');
+        setQVColor(qvSelectedColor);
+      } else {
+        selectorEl.classList.add('hidden');
+        document.getElementById('qv-img').src = getImageSrc(p.imgKey);
+      }
+
+      const modal = document.getElementById('quick-view-modal');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100', 'pointer-events-auto');
+      playSyntheticClick();
+    }
+
+    function setQVColor(col) {
+      qvSelectedColor = col;
+      let imgKey = 'white_ball';
+      if (col === 'red') imgKey = 'red_ball';
+      else if (col === 'pink') imgKey = 'pink_ball';
+
+      document.getElementById('qv-img').src = getImageSrc(imgKey);
+
+      ['red', 'white', 'pink'].forEach(c => {
+        const btn = document.getElementById(`qv-btn-${c}`);
+        if (btn) {
+          if (c === col) {
+            btn.className = 'flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-[#FCF1D0] bg-[#22396F] text-xs font-mono cursor-pointer';
+          } else {
+            btn.className = 'flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-[#FCF1D0]/20 bg-[#000414] text-xs font-mono cursor-pointer';
+          }
+        }
+      });
+      playSyntheticClick();
+    }
+
+    function addFromQuickView() {
+      if (qvProd) {
+        addToCart(qvProd.id, qvSelectedColor);
+        closeQuickView();
+      }
+    }
+
+    function closeQuickView() {
+      const modal = document.getElementById('quick-view-modal');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modal.classList.remove('opacity-100', 'pointer-events-auto');
+    }
+
+    // --- MODALS ---
+    function openKitBuilderModal() {
+      document.getElementById('kit-modal').classList.remove('opacity-0', 'pointer-events-none');
+      document.getElementById('kit-modal').classList.add('opacity-100', 'pointer-events-auto');
+    }
+    function closeKitModal() {
+      document.getElementById('kit-modal').classList.add('opacity-0', 'pointer-events-none');
+      document.getElementById('kit-modal').classList.remove('opacity-100', 'pointer-events-auto');
+    }
+    function confirmKitInquiry() {
+      document.getElementById('kit-confirmed-msg').classList.remove('hidden');
+      playSyntheticWoodCrack();
+    }
+
+    function openVIPModal() {
+      document.getElementById('vip-modal').classList.remove('opacity-0', 'pointer-events-none');
+      document.getElementById('vip-modal').classList.add('opacity-100', 'pointer-events-auto');
+    }
+    function closeVIPModal() {
+      document.getElementById('vip-modal').classList.add('opacity-0', 'pointer-events-none');
+      document.getElementById('vip-modal').classList.remove('opacity-100', 'pointer-events-auto');
+    }
+    function confirmVIPBooking() {
+      document.getElementById('vip-confirmed-msg').classList.remove('hidden');
+      playSyntheticWoodCrack();
+    }
+
+    function openWholesaleModal() {
+      alert("Institutional Wholesale: Net 30 invoices and custom 3-color 24-ball cartons are active. Contact wholesale@cricketatelier.com or configure above.");
+    }
+
+    function subscribeNewsletter() {
+      alert("Thank you for joining the Pavilion. You will receive batch alerts across Red, White, and Pink match ball reserves.");
+    }
+
+    // --- AMBIENT BACKGROUND MOTION CONTROLLER ---
+    const bgMotionLevels = [0.20, 0.40, 0.08, 0];
+    const bgMotionLabels = ['20%', '40%', '8%', 'OFF'];
+    let bgMotionIdx = 0;
+
+    function cycleBgMotion() {
+      bgMotionIdx = (bgMotionIdx + 1) % bgMotionLevels.length;
+      const level = bgMotionLevels[bgMotionIdx];
+      const bgEl = document.getElementById('ambient-bat-bg');
+      if (bgEl) {
+        bgEl.style.opacity = level.toString();
+      }
+      const textEl = document.getElementById('bg-motion-text');
+      if (textEl) {
+        textEl.textContent = `Willow BG: ${bgMotionLabels[bgMotionIdx]}`;
+      }
+      playSyntheticClick();
+    }
+
+    function initBgLoop() {
+      const bgImg = document.getElementById('bg-loop-img');
+      if (bgImg) {
+        if (typeof window.CRICKET_IMAGES !== 'undefined' && window.CRICKET_IMAGES.bg_bat_loop) {
+          bgImg.src = window.CRICKET_IMAGES.bg_bat_loop;
+        } else {
+          bgImg.src = 'bg_bat_loop.webp';
+        }
+      }
+    }
+
+    // --- PROCEDURAL WEB AUDIO SYNTHESIZER ---
+    let audioCtx = null;
+    let audioEnabled = false;
+
+    function initAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+    }
+
+    function toggleAudio() {
+      initAudio();
+      audioEnabled = !audioEnabled;
+      const txt = document.getElementById('sound-txt');
+      if (audioEnabled) {
+        txt.textContent = 'Active';
+        txt.classList.add('text-emerald-400');
+        playSyntheticWoodCrack();
+      } else {
+        txt.textContent = 'Muted';
+        txt.classList.remove('text-emerald-400');
+      }
+    }
+
+    function playSyntheticClick() {
+      if (!audioCtx || !audioEnabled) return;
+      const now = audioCtx.currentTime;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(1200, now);
+      osc.frequency.exponentialRampToValueAtTime(400, now + 0.04);
+      gain.gain.setValueAtTime(0.2, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.04);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start(now);
+      osc.stop(now + 0.05);
+    }
+
+    function playSyntheticWoodCrack() {
+      if (!audioCtx || !audioEnabled) return;
+      const now = audioCtx.currentTime;
+
+      const osc1 = audioCtx.createOscillator();
+      const gain1 = audioCtx.createGain();
+      osc1.type = 'triangle';
+      osc1.frequency.setValueAtTime(800, now);
+      osc1.frequency.exponentialRampToValueAtTime(150, now + 0.07);
+      gain1.gain.setValueAtTime(0.5, now);
+      gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+      osc1.connect(gain1);
+      gain1.connect(audioCtx.destination);
+      osc1.start(now);
+      osc1.stop(now + 0.08);
+
+      const osc2 = audioCtx.createOscillator();
+      const gain2 = audioCtx.createGain();
+      osc2.type = 'sine';
+      osc2.frequency.setValueAtTime(420, now);
+      osc2.frequency.exponentialRampToValueAtTime(180, now + 0.25);
+      gain2.gain.setValueAtTime(0.4, now);
+      gain2.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
+      osc2.connect(gain2);
+      gain2.connect(audioCtx.destination);
+      osc2.start(now);
+      osc2.stop(now + 0.26);
+    }
+
+    // --- INITIALIZE ON LOAD ---
+    window.addEventListener('DOMContentLoaded', () => {
+      initBgLoop();
+      renderProducts();
+      renderCart();
+      updateHeroSpotlightDisplay();
+    });
+  </script>
+</body>
+</html>
